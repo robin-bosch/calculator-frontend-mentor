@@ -1,0 +1,199 @@
+@use 'sass:color';
+
+@import 'themes/blue-theme.scss';
+@import 'themes/violet-theme.scss';
+@import 'themes/light-theme.scss';
+
+
+@import "./reset.scss";
+@import "./fonts.scss";
+
+.main {
+    min-height:100vh;
+    width:100%;
+    
+    padding:1.5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:var(--main-background);
+    
+    .calculator {
+        width: clamp(10rem, 100%, 32rem);
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap:1.5rem;
+
+        font-family: "League Spartan";
+        font-size: clamp(28px, 4vw, 32px);
+        line-height: normal;
+
+        
+
+        .header {
+            width:100%;
+            padding:0 0.5rem;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            color:var(--text);
+            font-size: 0.9em;
+
+            .theme-container {
+                display:flex;
+                align-items: end;
+                gap:2rem;
+
+                letter-spacing:0.1rem;
+                font-size: 0.8rem;
+
+                .theme-switch-numbers {
+                    width:100%;
+                    padding:0rem 0.75rem;
+                    margin-bottom:0.25rem; 
+
+                    display: flex;
+                    justify-content: space-between;             
+                }
+        
+                .theme-switch {
+                    width:5rem;
+                    padding:0.35rem;
+                    border-radius:500px;
+
+                    background:var(--keypad-background);
+        
+                    .theme-switch-handle {
+                        width:15px;
+                        height:15px;
+                        margin-left:0;
+                        border-radius:50%;
+
+                        background:var(--equals-key-background);
+                        
+                        transition:margin-left 0.3s;
+                    }
+                }
+
+                .theme-switch:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+        
+        .display {
+            width:100%;
+            height:calc(1.5em + 2rem);
+            padding:1rem 1.5rem;
+            border-radius:10px;
+    
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap:0.5rem;
+
+            overflow: hidden;
+
+            font-size: 1.5em;
+            color:var(--text);
+
+            background:var(--screen-background);
+    
+            .display-number {
+                overflow: hidden;
+
+                display: flex;
+                justify-content: end;
+            };
+        }
+
+        .keypad {
+            width:100%;
+            padding:clamp(1rem, 5vw, 2rem);
+            border-radius:10px;
+    
+            display:grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap:clamp(1rem, 4vw, 1.5rem);
+
+            background: var(--keypad-background);
+    
+            .keypad-button {
+                padding:1rem 0;
+                border:none;
+                border-radius:clamp(5px, 1vw, 10px);
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                transition:0.1s;
+            }
+
+            .keypad-button:hover {
+                cursor: pointer;
+                transition:0.1s;
+            }
+
+            .keypad-button:active {
+                transform: translateY(5px);
+                box-shadow: none;
+            }
+    
+            @media (min-width: 640px) { 
+                .keypad-button {
+                    padding:0.75rem 0;
+                }
+            }
+    
+            .number-button {
+                font-size:1.1em;
+                color: var(--number-text);
+
+                background: var(--number-key-background);
+                box-shadow:0px 5px 0px 0px var(--number-key-shadow);
+            }
+    
+            .number-button:hover {
+                background: var(--number-key-background-light);
+            }
+    
+            .reset-button {
+                background: var(--reset-key-background);
+                box-shadow:0px 5px 0px 0px var(--reset-key-shadow);
+
+                font-size:0.7em;
+                color: var(--reset-text);
+            }
+    
+            .reset-button:hover {
+                background: var(--reset-key-background-light);
+            }
+    
+            .equals-button {
+                background: var(--equals-key-background);
+                box-shadow:0px 5px 0px 0px var(--equals-key-shadow);
+
+                font-size:0.7em;
+                color: var(--equals-text);
+            }
+    
+            .equals-button:hover {
+                background: var(--equals-key-background-light);
+            }
+    
+            .wide-button {
+                width:100%;
+                padding:1rem 0;
+                grid-column: span 2;
+            }
+        }
+    }    
+}

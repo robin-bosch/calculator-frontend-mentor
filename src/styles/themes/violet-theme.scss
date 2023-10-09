@@ -1,0 +1,24 @@
+
+.violet-theme {
+    --main-background: hsl(268, 75%, 9%);
+    --keypad-background: hsl(268, 71%, 12%);
+    --screen-background: var(--keypad-background);
+
+    --number-key-background-light: hsl(268, 47%, 31%);
+    --number-key-background: hsl(268, 47%, 21%);
+    --number-key-shadow: hsl(290, 70%, 36%);
+
+    --reset-key-background-light: hsl(281, 89%, 36%);
+    --reset-key-background: hsl(281, 89%, 26%);
+    --reset-key-shadow: hsl(285, 91%, 52%);
+
+    --equals-key-background-light: hsl(176, 100%, 44%);
+    --equals-key-background: hsl(176, 100%, 44%);
+    --equals-key-shadow: hsl(177, 92%, 70%);
+
+
+    --number-text: hsl(52, 100%, 62%);
+    --reset-text: hsl(0, 0%, 100%);
+    --equals-text: hsl(198, 20%, 13%);
+    --text: var(--number-text);
+}

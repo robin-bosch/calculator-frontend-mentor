@@ -1,0 +1,24 @@
+
+.light-theme {
+    --main-background: hsl(0, 0%, 90%);
+    --keypad-background: hsl(0, 5%, 81%);
+    --screen-background: hsl(0, 0%, 93%);
+
+
+    --number-key-background-light: hsl(45, 7%, 99%);
+    --number-key-background: hsl(45, 7%, 89%);
+    --number-key-shadow: hsl(35, 11%, 61%);
+
+    --reset-key-background-light: hsl(185, 42%, 47%);
+    --reset-key-background: hsl(185, 42%, 37%);
+    --reset-key-shadow: hsl(185, 58%, 25%);
+
+    --equals-key-background-light: hsl(25, 98%, 50%);
+    --equals-key-background: hsl(25, 98%, 40%);
+    --equals-key-shadow: hsl(25, 99%, 27%);
+
+    --number-text: hsl(60, 10%, 19%);
+    --reset-text: hsl(0, 0%, 100%);
+    --equals-text: var(--reset-text);
+    --text: var(--number-text);
+}
