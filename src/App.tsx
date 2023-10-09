@@ -192,7 +192,7 @@ function App() {
                         <div className="theme-selection">
                             <div className="theme-switch-numbers">
                                 {
-                                    themeList.map((theme, index) => {
+                                    themeList.map((_theme, index) => {
                                         return(
                                             <p key={`theme-${index+1}`}>{index+1}</p>
                                         );
