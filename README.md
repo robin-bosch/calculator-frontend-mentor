@@ -3,7 +3,7 @@
 Developer: Robin Bosch  
 Designed by Frontend Mentor
 
-[View live Site](https://calculator-frontend-mentor-qc1nx2e09-robin-boschs-projects.vercel.app/)  
+[View live Site](https://calculator-frontend-mentor-peach.vercel.app/)  
 
 ![Mockup image](docs/mockup-preview.png)
 
