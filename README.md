@@ -38,39 +38,50 @@ Designed by Frontend Mentor
 The following designs were given to build the project:  
 
 <details>
-<summary>The Desktop design with a shown width of 1440px</summary>
+<summary>The Desktop design theme 1 with a shown width of 1440px</summary>
 
-![](docs/desktop-design.jpg)
+![](docs/desktop-design-theme-1.jpg)
 </details>
 
 <details>
-<summary>The Mobile design with a shown width of 375px</summary>
+<summary>The Desktop design theme 2 with a shown width of 1440px</summary>
 
-![](docs/mobile-design.jpg)
+![](docs/desktop-design-theme-2.jpg)
 </details>
 
 <details>
-<summary>Hover states</summary>
+<summary>The Desktop design theme 3 with a shown width of 1440px</summary>
 
-![](docs/active-states.jpg)
+![](docs/desktop-design-theme-3.jpg)
 </details>
 
 <details>
+
+<summary>Hover states for theme 1</summary>
+
+![](docs/active-states-theme-1.jpg)
+</details>
+
+<details>
+<summary>The Mobile design with a shown width of 375px with theme 1</summary>
+
+![](docs/mobile-design-theme-1.jpg)
+</details>
 
 ## My process
 
 ### Challenges
 
 - Getting the calculator to work correctly
-- Have switching between themes
+- Have switching between themes and selecting the theme based on user preference
 - Making sure the text sizes are correct according to the design
 
 
 ### What I learned
 
 - The important difference between CSS variables and SCSS variables.
-- Theming apps.
-- First time deploying on vercel (very easy)
+- Theming apps and how to get the user theme preference from the API.
+- First time deploying on vercel (very easy and intuitive)
 
 ## Technologies used
 
