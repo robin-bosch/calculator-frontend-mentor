@@ -18,7 +18,35 @@ enum Themes {
 
 function App() {
     const themeList = Object.values(Themes);
-    const [theme, setTheme] = useState<Themes>(Themes.Blue);
+    const [theme, setTheme] = useState<Themes>(getSavedTheme());
+
+    /**
+     * Returns the saved theme.
+     * If the theme is not valid or does not exist the default theme is selected which is based on the user preference for dark or light.
+     * @returns - theme that has been saved
+     */
+    function getSavedTheme(): Themes {
+        const savedTheme = localStorage.getItem('theme');
+
+        if (savedTheme && Object.values(Themes).includes(savedTheme as Themes)) {
+            return savedTheme as Themes;
+        }
+
+        else {
+            const defaultTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? Themes.Blue : Themes.Light;
+            setSavedTheme(defaultTheme);
+
+            return defaultTheme;
+        }
+    }
+
+    /**
+     * Sets theme in storage
+     * @param theme - theme to set in the storage
+     */
+    function setSavedTheme(theme: Themes) {
+        localStorage.setItem("theme", theme);
+    }
 
     // Saved to show on the display and reuse it for another calculation
     const [currentSolution, setCurrentSolution] = useState<number | null>(null)
@@ -30,9 +58,7 @@ function App() {
     const [operand, setOperand] = useState<OperandType | null>(null);
     const [secondNumber, setSecondNumber] = useState<string>("");
 
-    
 
-    
     /**
      * Watch for changes in the with numbers and show the correct number on the display
      */
@@ -149,14 +175,17 @@ function App() {
      */
     function nextTheme() {
         switch(themeList.indexOf(theme)) {
-            case 1:
+            case 0:
                 setTheme(Themes.Violet);
+                setSavedTheme(Themes.Violet);
                 break;
-            case 2:
+            case 1:
                 setTheme(Themes.Light);
+                setSavedTheme(Themes.Light);
                 break;
             default:
                 setTheme(Themes.Blue);
+                setSavedTheme(Themes.Blue);
                 break;
         }
     }
@@ -173,10 +202,10 @@ function App() {
             return "0px";
         }
         else if(currentIndex+1 == themeList.length) {
-            return "calc(100% - 20px)";
+            return "calc(100% - 15px)";
         }
         else {
-            return `calc(${(currentIndex / (themeList.length - 1)) * 100}% - 10px)`;
+            return `calc(${(currentIndex / (themeList.length - 1)) * 100}% - 7px)`;
         }
     }
 
@@ -242,3 +271,4 @@ function App() {
 }
 
 export default App
+
